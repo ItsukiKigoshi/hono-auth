@@ -15,7 +15,9 @@
 		}
 	],
 	"vars": {
-		"APP_URL": "https://hono-auth.pages.dev"
+		"APP_URL": "https://hono-auth.pages.dev",
+		"API_URL": "https://hono-auth.itsukikigoshi.workers.dev",
+		"BETTER_AUTH_URL": "https://hono-auth.itsukikigoshi.workers.dev"
 	}
 	// "kv_namespaces": [
 	//   {
