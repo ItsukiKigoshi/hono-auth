@@ -1,3 +1,3 @@
-import { getAuth } from "./auth";
+import { createAuth } from "./auth";
 
-export const auth = getAuth({} as Env);
+export const auth = createAuth({} as Env);

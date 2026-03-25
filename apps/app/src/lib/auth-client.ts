@@ -3,7 +3,10 @@ import { magicLinkClient } from "better-auth/client/plugins";
 import { passkeyClient } from "@better-auth/passkey/client"
 
 export const authClient = createAuthClient({
-    baseURL: import.meta.env.VITE_API_URL || "http://localhost:8787",
+    baseURL: `https://hono-auth.pages.dev/api/auth`,
+    fetchOptions: {
+        credentials: "include",
+    },
     plugins: [
         magicLinkClient(),
         passkeyClient()

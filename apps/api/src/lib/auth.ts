@@ -15,16 +15,16 @@ export const createAuth = (env: Env) => {
             }
         ),
         secret: env.BETTER_AUTH_SECRET,
-        advanced: {
-            defaultCookieAttributes: {
-                sameSite: "none",
+        cookie: {
+            config: {
+                sameSite: "lax",
                 secure: true,
-                partitioned: true
+                httpOnly: true,
             }
         },
         plugins: [
             passkey({
-                rpID: new URL(env.APP_URL).hostname,
+                rpID: "hono-auth.pages.dev",
                 rpName: "Hono Auth",
             }),
             magicLink({
@@ -44,9 +44,7 @@ export const createAuth = (env: Env) => {
                 },
             }),
         ],
-        baseURL: env.API_URL ?
-            `${env.API_URL}/api/auth` :
-            "http://localhost:8787/api/auth",
-        trustedOrigins: [env.APP_URL, "http://localhost:5173"],
+        baseURL: "https://hono-auth.pages.dev/api/auth",
+        trustedOrigins: ["https://hono-auth.pages.dev"],
     });
 };
