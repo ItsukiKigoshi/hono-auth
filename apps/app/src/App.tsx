@@ -15,7 +15,7 @@ function App() {
     try {
       const { error } = await authClient.signIn.magicLink({
         email,
-        callbackURL: import.meta.env.VITE_APP_URL,
+        callbackURL: "https://hono-auth.pages.dev",
       });
 
       if (error) {
