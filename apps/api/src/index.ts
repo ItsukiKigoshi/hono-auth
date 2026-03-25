@@ -10,7 +10,7 @@ app.get('/hello', (c) => {
 })
 
 app.use(
-    "/api/auth/*",
+    "/auth/*",
     async (c, next) => {
         const corsMiddleware = cors({
             origin: c.env.APP_URL,
@@ -24,7 +24,7 @@ app.use(
     }
 );
 
-app.on(["POST", "GET"], "/api/auth/*", (c) => {
+app.on(["POST", "GET"], "/auth/*", (c) => {
     const auth = createAuth(c.env);
     return auth.handler(c.req.raw);
 });

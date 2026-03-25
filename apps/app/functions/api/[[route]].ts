@@ -1,4 +1,4 @@
-import app from '../../api/src'
+import app from '../../../api/src/index'
 import { handle } from 'hono/cloudflare-pages'
 
 export const onRequest = handle(app)
