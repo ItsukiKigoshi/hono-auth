@@ -24,7 +24,7 @@ export const createAuth = (env: Env) => {
         },
         plugins: [
             passkey({
-                rpID: env.APP_URL ? new URL(env.APP_URL).hostname : "localhost",
+                rpID: `${env.APP_URL}/api/auth`,
                 rpName: "Hono Auth",
             }),
             magicLink({
@@ -44,7 +44,7 @@ export const createAuth = (env: Env) => {
                 },
             }),
         ],
-        baseURL: env.API_URL + "/api/auth",
+        baseURL: env.APP_URL + "/api/auth",
         trustedOrigins: [env.APP_URL],
     });
 };
