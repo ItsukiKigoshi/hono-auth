@@ -7,10 +7,6 @@ import { Resend } from "resend";
 import * as schema from "../db/auth-schema";
 
 export const createAuth = (env: Env) => {
-    const authBaseURL = env.API_URL
-        ? `${env.API_URL}/api/auth`
-        : "http://localhost:8787/api/auth";
-
     return betterAuth({
         database: drizzleAdapter(
             drizzle(env.hono_auth_db, { schema }), {
@@ -19,11 +15,11 @@ export const createAuth = (env: Env) => {
             }
         ),
         secret: env.BETTER_AUTH_SECRET,
-        advanced: {
-            defaultCookieAttributes: {
-                sameSite: "none",
+        cookie: {
+            config: {
+                sameSite: "lax",
                 secure: true,
-                partitioned: true
+                httpOnly: true,
             }
         },
         plugins: [
@@ -48,9 +44,7 @@ export const createAuth = (env: Env) => {
                 },
             }),
         ],
-        baseURL: env.API_URL ?
-            `${env.API_URL}/api/auth` :
-            "http://localhost:8787/api/auth",
-        trustedOrigins: [env.APP_URL, "http://localhost:5173"],
+        baseURL: env.API_URL + "/api/auth",
+        trustedOrigins: [env.APP_URL],
     });
 };

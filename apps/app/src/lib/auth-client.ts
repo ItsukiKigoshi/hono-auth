@@ -4,6 +4,9 @@ import { passkeyClient } from "@better-auth/passkey/client"
 
 export const authClient = createAuthClient({
     baseURL: import.meta.env.VITE_API_URL || "http://localhost:8787",
+    fetchOptions: {
+        credentials: "include",
+    },
     plugins: [
         magicLinkClient(),
         passkeyClient()
