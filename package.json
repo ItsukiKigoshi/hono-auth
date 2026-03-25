@@ -1,0 +1,12 @@
+{
+  "name": "hono-auth",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:api": "bun --filter hono-auth-api dev",
+    "dev:app": "bun --filter hono-auth-app dev",
+    "dev": "bun --filter \"*\" dev"
+  }
+}
