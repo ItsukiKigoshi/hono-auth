@@ -11,17 +11,12 @@ app.get('/', (c) => {
 
 app.use(
     "/api/auth/*",
-    async (c, next) => {
-        const corsMiddleware = cors({
-            origin: "https://hono-auth.pages.dev",
-            allowHeaders: ["Content-Type", "Authorization"],
-            allowMethods: ["POST", "GET", "OPTIONS"],
-            exposeHeaders: ["Content-Length"],
-            maxAge: 600,
-            credentials: true,
-        });
-        return corsMiddleware(c, next);
-    }
+    cors({
+        origin: (origin) => origin,
+        credentials: true,
+        allowMethods: ["GET", "POST", "OPTIONS", "PATCH", "DELETE"],
+        allowHeaders: ["Content-Type", "Authorization"],
+    })
 );
 
 app.on(["POST", "GET"], "/api/auth/*", (c) => {
