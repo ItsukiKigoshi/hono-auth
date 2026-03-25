@@ -44,7 +44,8 @@ export const createAuth = (env: Env) => {
                 },
             }),
         ],
-        baseURL: "https://hono-auth.itsukikigoshi.workers.dev/api/auth",
-        trustedOrigins: ["https://hono-auth.itsukikigoshi.workers.dev/"],
+        baseURL: "https://hono-auth.itsukikigoshi.workers.dev",
+        basePath: "/api/auth",
+        trustedOrigins: ["https://hono-auth.pages.dev"],
     });
 };
