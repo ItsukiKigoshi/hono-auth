@@ -15,7 +15,7 @@ function App() {
     try {
       const { error } = await authClient.signIn.magicLink({
         email,
-        callbackURL: "/",
+        callbackURL: "https://hono-auth.pages.dev/",
       });
 
       if (error) {
