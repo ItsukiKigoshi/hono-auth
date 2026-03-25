@@ -7,10 +7,6 @@ import { Resend } from "resend";
 import * as schema from "../db/auth-schema";
 
 export const createAuth = (env: Env) => {
-    const authBaseURL = env.API_URL
-        ? `${env.API_URL}/api/auth`
-        : "http://localhost:8787/api/auth";
-
     return betterAuth({
         database: drizzleAdapter(
             drizzle(env.hono_auth_db, { schema }), {
@@ -28,7 +24,7 @@ export const createAuth = (env: Env) => {
         },
         plugins: [
             passkey({
-                rpID: env.APP_URL ? new URL(env.APP_URL).hostname : "localhost",
+                rpID: new URL(env.APP_URL).hostname,
                 rpName: "Hono Auth",
             }),
             magicLink({
