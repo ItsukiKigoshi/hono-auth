@@ -2,9 +2,7 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "hono-auth",
   "compatibility_date": "2026-03-24",
-  "compatibility_flags": [
-    "nodejs_compat"
-  ],
+  "compatibility_flags": ["nodejs_compat"],
   "pages_build_output_dir": "./dist",
   "d1_databases": [
     {
@@ -13,9 +11,5 @@
       "database_id": "39c79572-05fd-4d02-9f19-cb11921974f5",
       "migrations_dir": "./drizzle"
     }
-  ],
-  "main": "src/index.ts",
-  "assets": {
-    "directory": "./dist"
-  }
+  ]
 }

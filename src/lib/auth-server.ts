@@ -5,12 +5,13 @@ import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { drizzle } from "drizzle-orm/d1";
 import { Resend } from "resend";
 import * as schema from "../db/auth-schema";
+import {Bindings} from './bindings'
 
-export const getAuth = (env: Env) => {
+export const getAuth = (env: Bindings) => {
   return betterAuth({
     database: drizzleAdapter(drizzle(env.hono_auth_db, { schema }), {
       provider: "sqlite",
-      schema: schema,
+      schema,
     }),
     secret: env.BETTER_AUTH_SECRET,
     plugins: [
