@@ -15,7 +15,7 @@
 		}
 	],
 	"vars": {
-		"APP_URL": "https://hono-auth.pages.dev",
+		"APP_URL": "https://hono-auth.pages.dev"
 	}
 	// "kv_namespaces": [
 	//   {
