@@ -3,6 +3,6 @@ import { passkeyClient } from "@better-auth/passkey/client";
 import { magicLinkClient } from "better-auth/client/plugins";
 
 export const authClient = createAuthClient({
-  baseURL: "https://hono-auth.itsukikigoshi.workers.dev",
+  baseURL: "https://hono-auth.pages.dev",
   plugins: [passkeyClient(), magicLinkClient()],
 });

@@ -1,5 +1,7 @@
 import { Hono } from 'hono'
 import { cors } from 'hono/cors'
+import { handle } from 'hono/cloudflare-pages'
+import { serveStatic } from 'hono/cloudflare-pages'
 import { getAuth } from './lib/auth-server'
 
 const app = new Hono<{ Bindings: Env }>()
@@ -16,4 +18,7 @@ app.on(['POST', 'GET'], '/api/auth/**', (c) => {
   return auth.handler(c.req.raw)
 })
 
+app.get('*', serveStatic())
+
+export const onRequest = handle(app)
 export default app
