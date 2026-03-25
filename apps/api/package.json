@@ -7,9 +7,18 @@
     "cf-typegen": "wrangler types --env-interface CloudflareBindings"
   },
   "dependencies": {
-    "hono": "^4.12.9"
+    "@better-auth/passkey": "^1.5.6",
+    "@hono/node-server": "^1.19.11",
+    "better-auth": "^1.5.6",
+    "drizzle-orm": "^0.45.1",
+    "hono": "^4.12.9",
+    "resend": "^6.9.4"
   },
   "devDependencies": {
-    "wrangler": "^4.4.0"
+    "@cloudflare/workers-types": "^4.20260317.1",
+    "@libsql/client": "^0.17.2",
+    "@types/node": "^25.5.0",
+    "drizzle-kit": "^0.31.10",
+    "wrangler": "^4.77.0"
   }
 }

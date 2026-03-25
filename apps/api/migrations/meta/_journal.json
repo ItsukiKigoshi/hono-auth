@@ -1,0 +1,20 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1774402139660,
+      "tag": "0000_groovy_the_twelve",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1774402331988,
+      "tag": "0001_curious_fixer",
+      "breakpoints": true
+    }
+  ]
+}
