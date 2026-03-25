@@ -5,7 +5,7 @@ import { cors } from "hono/cors";
 
 const app = new Hono < { Bindings: Env } > ();
 
-app.get('/', (c) => {
+app.get('/api', (c) => {
     return c.text('Hello Hono!')
 })
 
