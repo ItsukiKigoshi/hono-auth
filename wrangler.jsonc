@@ -5,7 +5,7 @@
   "compatibility_flags": [
     "nodejs_compat"
   ],
-  "pages_build_output_dir": "./dist", 
+  "pages_build_output_dir": "./dist",
   "d1_databases": [
     {
       "binding": "hono_auth_db",
@@ -13,5 +13,9 @@
       "database_id": "39c79572-05fd-4d02-9f19-cb11921974f5",
       "migrations_dir": "./drizzle"
     }
-  ]
+  ],
+  "main": "src/index.ts",
+  "assets": {
+    "directory": "./dist"
+  }
 }
