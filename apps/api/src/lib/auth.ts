@@ -17,7 +17,7 @@ export const createAuth = (env: Env) => {
         secret: env.BETTER_AUTH_SECRET,
         cookie: {
             config: {
-                sameSite: "lax",
+                sameSite: "none",
                 secure: true,
                 httpOnly: true,
             }
