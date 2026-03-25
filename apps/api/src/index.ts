@@ -13,7 +13,7 @@ app.use(
     "/api/auth/*",
     async (c, next) => {
         const corsMiddleware = cors({
-            origin: c.env.APP_URL,
+            origin: "https://hono-auth.pages.dev",
             allowHeaders: ["Content-Type", "Authorization"],
             allowMethods: ["POST", "GET", "OPTIONS"],
             exposeHeaders: ["Content-Length"],
