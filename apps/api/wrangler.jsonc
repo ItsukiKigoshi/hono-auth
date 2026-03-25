@@ -1,6 +1,6 @@
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "api",
+	"name": "hono-auth",
 	"main": "src/index.ts",
 	"compatibility_date": "2026-03-25",
 	"compatibility_flags": [
@@ -13,13 +13,11 @@
 			"database_id": "616ab37a-56a2-41ae-b807-a439c8e5e1f7",
 			"migrations_dir": "./migrations"
 		}
-	]
-	// "compatibility_flags": [
-	//   "nodejs_compat"
-	// ],
-	// "vars": {
-	//   "MY_VAR": "my-variable"
-	// },
+	],
+	"vars": {
+		"APP_URL": "https://hono-auth.pages.dev",
+		"API_URL": "https://hono-auth.itsukikigoshi.workers.dev"
+	}
 	// "kv_namespaces": [
 	//   {
 	//     "binding": "MY_KV_NAMESPACE",
