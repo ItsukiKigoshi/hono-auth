@@ -5,12 +5,12 @@ import { cors } from "hono/cors";
 
 const app = new Hono < { Bindings: Env } > ();
 
-app.get('/hello', (c) => {
+app.get('/', (c) => {
     return c.text('Hello Hono!')
 })
 
 app.use(
-    "/auth/*",
+    "/api/auth/*",
     async (c, next) => {
         const corsMiddleware = cors({
             origin: c.env.APP_URL,
@@ -24,9 +24,8 @@ app.use(
     }
 );
 
-app.on(["POST", "GET"], "/auth/*", (c) => {
+app.on(["POST", "GET"], "/api/auth/*", (c) => {
     const auth = createAuth(c.env);
     return auth.handler(c.req.raw);
 });
-
 export default app;
