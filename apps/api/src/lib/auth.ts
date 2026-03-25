@@ -7,9 +7,6 @@ import { Resend } from "resend";
 import * as schema from "../db/auth-schema";
 
 export const createAuth = (env: Env) => {
-    console.log("Database Binding:", !!env.hono_auth_db); // falseならDB紐付けミス
-    console.log("Secret Exists:", !!env.BETTER_AUTH_SECRET); // falseなら環境変数ミス
-
     return betterAuth({
         database: drizzleAdapter(
             drizzle(env.hono_auth_db, { schema }), {
@@ -48,6 +45,6 @@ export const createAuth = (env: Env) => {
             }),
         ],
         baseURL: "https://hono-auth.pages.dev/api/auth",
-        trustedOrigins: ["https://hono-auth.pages.dev","http://localhost:5173"],
+        trustedOrigins: ["https://hono-auth.pages.dev"],
     });
 };
