@@ -2,6 +2,8 @@
 However, since I deployed to Cloudflare Pages and Cloudflare Workers separately, the URL of backend and frontend differ,
 hence the browser did not allow me to login (perhaps because of the limitation of cross-site cookie movement; Backend->Frontend). かなぴ
 
+特段の事情が無ければ，今後の[統合](https://blog.cloudflare.com/ja-jp/pages-and-workers-are-converging-into-one-experience/)も見据えてとりあえずWaorkersにDeployするのが良さそう．
+
 これまた1つの実験.
 
 この検証は[timetable.icu](https://github.com/ItsukiKigoshi/timetable.icu)の認証実装に活かされました．
