@@ -1,6 +1,6 @@
-# Example Mana Repo Full Stack App to enable Magic Link + Paakey Login with Better Auth, Hono and Vite + React.
+# Example Mana Repo Full Stack App to enable Magic Link + Passkey Login with Better Auth, Hono and Vite + React.
 However, since I deployed to Cloudflare Pages and Cloudflare Workers separately, the URL of backend and frontend differ,
-hence the browser did not allow me to login (perhaps because of the limitation of cross-site cookie movement; Backend->Frontend).
+hence the browser did not allow me to login (perhaps because of the limitation of cross-site cookie movement; Backend->Frontend). かなぴ
 
 これまた1つの実験.
 
